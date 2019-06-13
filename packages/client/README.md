@@ -77,7 +77,7 @@ TODO
 Within the download you'll find the following directories and files:
 
 ```
-material-dashboard-pro-react
+material-dashboard-react
 │
 ├── CHANGELOG.md
 ├── ISSUE_TEMPLATE.md
@@ -99,16 +99,16 @@ material-dashboard-pro-react
     │   │   ├── faces
     │   │   ├── flags
     │   ├── jss
-    │   │   ├── material-dashboard-pro-react
+    │   │   ├── material-dashboard-react
     │   │   │   ├── components
     │   │   │   ├── layouts
     │   │   │   └── views
-    │   │   └── material-dashboard-pro-react.jsx
+    │   │   └── material-dashboard-react.jsx
     │   └── scss
-    │       ├── material-dashboard-pro-react
+    │       ├── material-dashboard-react
     │       │   ├── mixins
     │       │   └── plugins
-    │       └── material-dashboard-pro-react.scss
+    │       └── material-dashboard-react.scss
     ├── components
     │   ├── Accordion
     │   │   └── Accordion.jsx
