@@ -1,7 +1,8 @@
 {
   "name": "@film-manager/server",
   "version": "1.0.0",
-  "description": "",
+  "repository": "https://github.com/gabriel-nlima/film-manager",
+  "description": "film-manager server/backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
