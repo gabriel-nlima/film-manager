@@ -1,264 +1,44 @@
-# Material Dashboard React
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-Material Dashboard React is a  Material-UI Admin created using [create-react-app](https://github.com/facebook/create-react-app) with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard React was built over the popular Material-UI framework.
+In the project directory, you can run:
 
-Material Dashboard React makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
+### `npm start`
 
-Material Dashboard React comes with 7 color filter choices for the links of the Sidebar (`blue`, `green`, `orange`, `red`, `purple`, `rose`, `white`), 3 filter color choices for background of the Sidebar (`white`, `blue`, `black`), an option to have a background image on the Sidebar and 6 color filter choices the card headers (`blue`, `green`, `orange`, `red`, `purple`, `rose`).
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Material Dashboard React was created with [create-react-app](https://github.com/facebook/create-react-app) and it uses a framework built by our friend [Olivier - Material-UI](https://github.com/mui-org/material-ui), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-#### Special thanks
+### `npm test`
 
-During the development of this dashboard, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- [Perfect-scrollbar](https://github.com/utatti/perfect-scrollbar) for the slim and beautiful scrollbars.
-- [React-chartist](https://github.com/fraserxu/react-chartist) for the wonderful charts.
-- [React-datetime](https://github.com/YouCanBookMe/react-datetime) for the easy to use date and time pickers.
-- [React-big-calendar](https://github.com/intljusticemission/react-big-calendar) for the a wonderful calendar.
-- [React-bootstrap-sweetalert](https://github.com/djorg83/react-bootstrap-sweetalert) for the wonderful alerts.
-- [React-google-maps](https://github.com/tomchentw/react-google-maps) for the nice and easy to use map components.
-- [React-jvectormap](https://github.com/kadoshms/react-jvectormap) for the nice vector map components.
-- [React-nouislider](https://github.com/algolia/react-nouislider) for the nice and clean slider.
-- [React-tables](https://react-table.js.org/#/story/simple-table) for the nice and clean slider.
-- [React-tagsinput](https://github.com/olahol/react-tagsinput) for the easy and beatiful to use tags components.
+### `npm run build`
 
-Let us know your thoughts below. And good luck with development!
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Table of Contents
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-- [Versions](#versions)
-- [Demo](#demo)
-- [Quick Start](#quick-start)
-- [Documentation](#documentation)
-- [File Structure](#file-structure)
-- [Browser Support](#browser-support)
-- [Resources](#resources)
-- [Reporting Issues](#reporting-issues)
-- [Technical Support or Questions](#technical-support-or-questions)
-- [Licensing](#licensing)
-- [Useful Links](#useful-links)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Versions
+### `npm run eject`
 
-[<img src="https://s3.amazonaws.com/creativetim_bucket/github/html.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-pro)
-[<img src="https://s3.amazonaws.com/creativetim_bucket/github/react.svg" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-pro-react)
-[<img src="https://s3.amazonaws.com/creativetim_bucket/github/vuejs.png" width="60" height="60" />](https://www.creative-tim.com/product/vue-material-dashboard-pro)
-[<img src="https://s3.amazonaws.com/creativetim_bucket/github/angular.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-pro-angular2)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-| HTML                                                                                                                                                                               | React                                                                                                                                                                                           | Vue                                                                                                                                                                                       | Angular                                                                                                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [![Material Dashboard HTML](https://s3.amazonaws.com/creativetim_bucket/products/51/thumb/opt_mdp_thumbnail.jpg)](https://www.creative-tim.com/product/material-dashboard-pro) | [![Material Dashboard React](https://s3.amazonaws.com/creativetim_bucket/products/80/thumb/opt_mdp_react_thumbnail.jpg)](https://www.creative-tim.com/product/material-dashboard-pro-react) | [![Vue Material Dashboard Pro](https://s3.amazonaws.com/creativetim_bucket/products/87/thumb/opt_mdp_vue_thumbnail.jpg)](https://www.creative-tim.com/product/vue-material-dashboard-pro) | [![Material Dashboard Angular](https://s3.amazonaws.com/creativetim_bucket/products/55/thumb/opt_mdp_angular_thumbnail.jpg)](https://www.creative-tim.com/product/material-dashboard-pro-angular2) |
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Demo
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- [Start page](https://demos.creative-tim.com/material-dashboard-pro-react/#/dashboard)
-- [User profile page](https://demos.creative-tim.com/material-dashboard-pro-react/#/user-page)
-- [Tables page ](https://demos.creative-tim.com/material-dashboard-pro-react/#/tables/extended-tables)
-- [Maps Page](https://demos.creative-tim.com/material-dashboard-pro-react/#/maps/google-maps)
-- [Notifications page](https://demos.creative-tim.com/material-dashboard-pro-react/#/components/notifications)
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-[View More](https://demos.creative-tim.com/material-dashboard-pro-react/#/dashboard).
+## Learn More
 
-## Quick start
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Quick start options:
-
-```bash
-    $ npm i && npm start
-```
-
-## Documentation
-TODO
-
-## File Structure
-
-Within the download you'll find the following directories and files:
-
-```
-material-dashboard-react
-│
-├── CHANGELOG.md
-├── ISSUE_TEMPLATE.md
-├── README.md
-├── package.json
-├── documentation
-│   ├── assets
-│   └── tutorial-components.html
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   └── manifest.json
-└── src
-    ├── index.js
-    ├── routes.js
-    ├── assets
-    │   ├── github
-    │   ├── img
-    │   │   ├── faces
-    │   │   ├── flags
-    │   ├── jss
-    │   │   ├── material-dashboard-react
-    │   │   │   ├── components
-    │   │   │   ├── layouts
-    │   │   │   └── views
-    │   │   └── material-dashboard-react.jsx
-    │   └── scss
-    │       ├── material-dashboard-react
-    │       │   ├── mixins
-    │       │   └── plugins
-    │       └── material-dashboard-react.scss
-    ├── components
-    │   ├── Accordion
-    │   │   └── Accordion.jsx
-    │   ├── Badge
-    │   │   └── Badge.jsx
-    │   ├── Card
-    │   │   ├── Card.jsx
-    │   │   ├── CardAvatar.jsx
-    │   │   ├── CardBody.jsx
-    │   │   ├── CardFooter.jsx
-    │   │   ├── CardHeader.jsx
-    │   │   ├── CardIcon.jsx
-    │   │   └── CardText.jsx
-    │   ├── Clearfix
-    │   │   └── Clearfix.jsx
-    │   ├── CustomButtons
-    │   │   └── Button.jsx
-    │   ├── CustomDropdown
-    │   │   └── CustomDropdown.jsx
-    │   ├── CustomInput
-    │   │   └── CustomInput.jsx
-    │   ├── CustomLinearProgress
-    │   │   └── CustomLinearProgress.jsx
-    │   ├── CustomTabs
-    │   │   └── CustomTabs.jsx
-    │   ├── CustomUpload
-    │   │   ├── ImageUpload.jsx
-    │   │   └── PictureUpload.jsx
-    │   ├── FixedPlugin
-    │   │   └── FixedPlugin.jsx
-    │   ├── Footer
-    │   │   └── Footer.jsx
-    │   ├── Grid
-    │   │   ├── GridContainer.jsx
-    │   │   └── GridItem.jsx
-    │   ├── Heading
-    │   │   └── Heading.jsx
-    │   ├── InfoArea
-    │   │   └── InfoArea.jsx
-    │   ├── Instruction
-    │   │   └── Instruction.jsx
-    │   ├── NavPills
-    │   │   └── NavPills.jsx
-    │   ├── Navbars
-    │   │   ├── AdminNavbar.jsx
-    │   │   ├── AdminNavbarLinks.jsx
-    │   │   └── AuthNavbar.jsx
-    │   ├── Pagination
-    │   │   └── Pagination.jsx
-    │   ├── Sidebar
-    │   │   └── Sidebar.jsx
-    │   ├── Snackbar
-    │   │   ├── Snackbar.jsx
-    │   │   └── SnackbarContent.jsx
-    │   ├── Table
-    │   │   └── Table.jsx
-    │   ├── Tasks
-    │   │   └── Tasks.jsx
-    │   ├── Timeline
-    │   │   └── Timeline.jsx
-    │   ├── Typography
-    │   │   ├── Danger.jsx
-    │   │   ├── Info.jsx
-    │   │   ├── Muted.jsx
-    │   │   ├── Primary.jsx
-    │   │   ├── Quote.jsx
-    │   │   ├── Success.jsx
-    │   │   └── Warning.jsx
-    │   └── Wizard
-    │       └── Wizard.jsx
-    ├── layouts
-    │   ├── Admin.jsx
-    │   ├── Auth.jsx
-    │   └── RTL.jsx
-    ├── variables
-    │   ├── charts.jsx
-    │   └── general.jsx
-    └── views
-        ├── Calendar
-        │   └── Calendar.jsx
-        ├── Charts
-        │   └── Charts.jsx
-        ├── Components
-        │   ├── Buttons.jsx
-        │   ├── GridSystem.jsx
-        │   ├── Icons.jsx
-        │   ├── Notifications.jsx
-        │   ├── Panels.jsx
-        │   ├── SweetAlert.jsx
-        │   └── Typography.jsx
-        ├── Dashboard
-        │   └── Dashboard.jsx
-        ├── Forms
-        │   ├── ExtendedForms.jsx
-        │   ├── RegularForms.jsx
-        │   ├── ValidationForms.jsx
-        │   ├── Wizard.jsx
-        │   └── WizardSteps
-        │       ├── Step1.jsx
-        │       ├── Step2.jsx
-        │       └── Step3.jsx
-        ├── Maps
-        │   ├── FullScreenMap.jsx
-        │   ├── GoogleMaps.jsx
-        │   └── VectorMap.jsx
-        ├── Pages
-        │   ├── ErrorPage.jsx
-        │   ├── LockScreenPage.jsx
-        │   ├── LoginPage.jsx
-        │   ├── PricingPage.jsx
-        │   ├── RTLSupport.jsx
-        │   ├── RegisterPage.jsx
-        │   ├── Timeline.jsx
-        │   └── UserProfile.jsx
-        ├── Tables
-        │   ├── ExtendedTables.jsx
-        │   ├── ReactTables.jsx
-        │   └── RegularTables.jsx
-        └── Widgets
-            └── Widgets.jsx
-```
-
-## Browser Support
-
-At present, we officially aim to support the last two versions of the following browsers:
-
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
-
-## Licensing
-
-- Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
-
-## Useful Links
-
-- [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
-
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
-
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
-
-##### Social Media
-
-Twitter: <https://twitter.com/CreativeTim>
-
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://instagram.com/creativetimofficial>
+To learn React, check out the [React documentation](https://reactjs.org/).
