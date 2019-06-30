@@ -33,3 +33,14 @@ code {
 		width: 1170px;
 	}
 }
+
+.submit {
+	margin-top: 1rem;
+	float: right;
+	text-align: right;
+	margin: 0;
+}
+
+.submitBtn {
+	margin-left: 5px;
+}

@@ -1,9 +1,13 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css'
 
+//interfaces
+
 // components
-import Header from './Components/Layout/Header'
-import Container from './Components/Layout/Container'
+import Layout from './Components/Layout'
+import Home from './Components/Layout/Home'
+import FormProject from './Components/Forms/FormProject'
 
 // containers
 
@@ -11,11 +15,21 @@ import Container from './Components/Layout/Container'
 
 // redux
 
+const users = () => {
+	return <h3>users</h3>
+}
+
 const App: React.FC = () => {
 	return (
-		<Container>
-			<Header />
-		</Container>
+		<BrowserRouter>
+			<Layout>
+				<Switch>
+					<Route path='/' exact component={Home} />
+					<Route path='/newProject' exact component={FormProject} />
+					<Route path='/manageUsers' exact component={users} />
+				</Switch>
+			</Layout>
+		</BrowserRouter>
 	)
 }
 
