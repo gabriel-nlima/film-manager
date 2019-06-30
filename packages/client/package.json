@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "repository": "https://github.com/gabriel-nlima/film-manager",
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.15",
@@ -34,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
   }
 }
