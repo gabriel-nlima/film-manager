@@ -13,22 +13,26 @@ import Col from 'antd/es/col'
 import Menu from 'antd/es/menu'
 import Icon from 'antd/es/icon'
 import Card from 'antd/es/card'
-import Button from 'antd/es/button';
+import Button from 'antd/es/button'
 
 const MainLayout: FC<RouteComponentProps<any, StaticContext, any>> = ({
 	history,
 	match,
 	children,
 }) => {
-	const [selected, setSelected] = useState('Projetos');
+	const [selected, setSelected] = useState('Projetos')
 
-    const extra = 
-    <>
-        <Button onClick={() => window.location.pathname = 'signin'} type="primary" htmlType="submit">
-            Sign Out
-        </Button>
-    </>
-
+	const extra = (
+		<>
+			<Button
+				onClick={() => history.push('/')}
+				type='primary'
+				htmlType='submit'
+			>
+				Sign Out
+			</Button>
+		</>
+	)
 
 	return (
 		<div className='container'>
@@ -49,7 +53,7 @@ const MainLayout: FC<RouteComponentProps<any, StaticContext, any>> = ({
 							title={
 								<span>
 									<Icon type='video-camera' />
-									<span onClick={() => history.push('/')}>
+									<span onClick={() => history.push('/home')}>
 										Projetos
 									</span>
 								</span>

@@ -11,12 +11,12 @@ import Tag from 'antd/es/tag'
 
 const { Text } = Typograph
 
-interface IProps {
+interface Props {
 	project: Project
 	showMore?: (project: Project) => void
 }
 
-const ProjectCard: FC<IProps> = ({ project, showMore }) => {
+const ProjectCard: FC<Props> = ({ project, showMore }) => {
 	return (
 		<Card
 			title={

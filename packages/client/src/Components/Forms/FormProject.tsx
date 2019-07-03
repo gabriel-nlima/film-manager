@@ -14,7 +14,7 @@ import Row from 'antd/es/row'
 import Col from 'antd/es/col'
 import Card from 'antd/es/card'
 
-interface IProps {
+interface Props {
 	handleChange?: (value: string, input: string) => void
 	onSubmit?: () => void
 	project?: Project
@@ -22,7 +22,7 @@ interface IProps {
 
 const { Option } = Select
 
-const FormProject: React.FC<IProps> = ({ project, handleChange, onSubmit }) => {
+const FormProject: React.FC<Props> = ({ project, handleChange, onSubmit }) => {
 	return (
 		<Card>
 			<Form layout='horizontal'>

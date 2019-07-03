@@ -10,7 +10,7 @@ import ProjectCard from '../ProjectCard'
 import Row from 'antd/es/row'
 import Col from 'antd/es/col'
 
-interface IProps {
+interface Props {
 	projects?: Project[]
 }
 
@@ -27,7 +27,7 @@ const projects: Project[] = [
 	},
 ]
 
-const Home: FC<IProps> = () => {
+const Home: FC<Props> = () => {
 	return (
 		<Row gutter={4}>
 			{projects.map((project, index) => (

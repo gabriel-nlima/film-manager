@@ -4,14 +4,14 @@ import React, { FC } from 'react'
 import Affix from 'antd/es/affix'
 import PageHeader from 'antd/es/page-header'
 
-interface IProps {
+interface Props {
 	title?: React.ReactNode
 	extra?: React.ReactNode[] | React.ReactNode
 	subTitle?: string
 	onBack?: () => void
 }
 
-const Header: FC<IProps> = ({
+const Header: FC<Props> = ({
 	title = 'Film Manager',
 	subTitle = 'bem vindo',
 	extra,
