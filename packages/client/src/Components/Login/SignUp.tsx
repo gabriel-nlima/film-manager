@@ -14,13 +14,13 @@ import Checkbox from 'antd/es/checkbox'
 // components
 
 interface Props {
-	history?: History
+	history: History
 }
 
 const SingUp: FC<Props> = ({ history }) => {
 	const singUp = (event: React.FormEvent<HTMLElement>) => {
 		event.preventDefault()
-		history && history.push('/home')
+		history.push('/projects')
 	}
 
 	return (

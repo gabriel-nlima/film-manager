@@ -7,8 +7,9 @@ import './App.css'
 // components
 import Login from './Components/Login'
 import Layout from './Components/Layout'
-import Home from './Components/Layout/Home'
-import FormProject from './Components/Forms/FormProject'
+import Projects from './Components/Project/Projects'
+import ManageProject from './Components/Project/ManageProject'
+import FormProject from './Components/Project/FormProject'
 
 // containers
 
@@ -17,7 +18,7 @@ import FormProject from './Components/Forms/FormProject'
 // redux
 
 const users = () => {
-	return <h3>users</h3>
+	return <h3>TODO</h3>
 }
 
 const App: React.FC = () => {
@@ -26,8 +27,13 @@ const App: React.FC = () => {
 			<Switch>
 				<Route path='/' exact component={Login} />
 				<Layout>
-					<Route path='/home' exact component={Home} />
+					<Route path='/projects' exact component={Projects} />
 					<Route path='/newProject' exact component={FormProject} />
+					<Route
+						path='/manageProject'
+						exact
+						component={ManageProject}
+					/>
 					<Route path='/manageUsers' exact component={users} />
 				</Layout>
 			</Switch>

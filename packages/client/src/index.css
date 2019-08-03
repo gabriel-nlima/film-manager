@@ -17,6 +17,7 @@ code {
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
+	margin-top: 15px;
 }
 @media (min-width: 768px) {
 	.container {
@@ -43,4 +44,14 @@ code {
 
 .submitBtn {
 	margin-left: 5px;
+}
+
+.header-btn {
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.backButton {
+	margin-right: 5px;
+	border: none;
 }

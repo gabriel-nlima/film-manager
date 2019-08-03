@@ -12,26 +12,54 @@ import Row from 'antd/es/row'
 import Col from 'antd/es/col'
 import Menu from 'antd/es/menu'
 import Icon from 'antd/es/icon'
-import Card from 'antd/es/card'
+import Avatar from 'antd/es/avatar'
+import Drawer from 'antd/es/drawer'
 import Button from 'antd/es/button'
 
 const MainLayout: FC<RouteComponentProps<any, StaticContext, any>> = ({
 	history,
-	match,
 	children,
 }) => {
-	const [selected, setSelected] = useState('Projetos')
-
+	const [showMenuDrawer, setShowMenuDrawer] = useState(false)
 	const extra = (
-		<>
-			<Button
-				onClick={() => history.push('/')}
-				type='primary'
-				htmlType='submit'
+		<div onClick={() => onClick('/')}>
+			<Avatar className='header-btn'>F</Avatar>
+		</div>
+	)
+
+	const onClick = (path: string) => {
+		history.push(path)
+	}
+
+	const MenuList = () => (
+		<Menu mode='vertical'>
+			<Menu.SubMenu
+				key={'Projetos'}
+				title={
+					<span>
+						<Icon type='video-camera' />
+						<span>Projetos</span>
+					</span>
+				}
+				onTitleClick={() => onClick('/projects')}
 			>
-				Sign Out
-			</Button>
-		</>
+				<Menu.Item
+					key={'Projeto'}
+					onClick={() => onClick('/newProject')}
+				>
+					<Icon type='plus' />
+					<span>Novo projeto</span>
+				</Menu.Item>
+			</Menu.SubMenu>
+			<Menu.Item key={'Usuários'} onClick={() => onClick('/manageUsers')}>
+				<Icon type='team' />
+				<span>Usuários</span>
+			</Menu.Item>
+			<Menu.Item key={'Recursos'}>
+				<Icon type='appstore' />
+				<span>Recursos</span>
+			</Menu.Item>
+		</Menu>
 	)
 
 	return (
@@ -42,49 +70,29 @@ const MainLayout: FC<RouteComponentProps<any, StaticContext, any>> = ({
 				</Col>
 			</Row>
 			<Row>
-				<Col xs={24} sm={6} md={6} lg={4}>
-					<Menu
-						mode='inline'
-						defaultSelectedKeys={[selected]}
-						onClick={({ key }) => setSelected(key)}
-					>
-						<Menu.SubMenu
-							key={'Projetos'}
-							title={
-								<span>
-									<Icon type='video-camera' />
-									<span onClick={() => history.push('/home')}>
-										Projetos
-									</span>
-								</span>
-							}
-							onTitleClick={({ key }) => setSelected(key)}
-						>
-							<Menu.Item
-								key={'Projeto'}
-								onClick={() => history.push('/newProject')}
-							>
-								<Icon type='plus' />
-								<span>Novo projeto</span>
-							</Menu.Item>
-						</Menu.SubMenu>
-						<Menu.Item
-							key={'Usuários'}
-							onClick={() => history.push('/manageUsers')}
-						>
-							<Icon type='team' />
-							<span>Usuários</span>
-						</Menu.Item>
-						<Menu.Item key={'Recursos'}>
-							<Icon type='appstore' />
-							<span>Recursos</span>
-						</Menu.Item>
-					</Menu>
+				<Col xs={0} sm={6} md={6} lg={4}>
+					<MenuList />
 				</Col>
-				<Col xs={24} sm={18} md={18} lg={20}>
-					<Card title={selected}>{children}</Card>
+				<Col xs={2} sm={0} style={{ margin: '5px' }}>
+					<Button
+						icon={showMenuDrawer ? 'menu-fold' : 'menu-unfold'}
+						onClick={() => setShowMenuDrawer(true)}
+					/>
+				</Col>
+				<Col xs={21} sm={18} md={18} lg={20}>
+					{children}
 				</Col>
 			</Row>
+			<Drawer
+				title='Film Manager'
+				placement='left'
+				onClose={() => setShowMenuDrawer(false)}
+				visible={showMenuDrawer}
+				closable={false}
+				bodyStyle={{ padding: '0px' }}
+			>
+				<MenuList />
+			</Drawer>
 		</div>
 	)
 }

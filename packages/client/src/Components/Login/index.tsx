@@ -19,7 +19,7 @@ interface TabsContents {
 	signup: React.ReactNode
 }
 interface Props {
-	history?: History
+	history: History
 }
 
 const Login: FC<Props> = ({ history }) => {
@@ -31,8 +31,8 @@ const Login: FC<Props> = ({ history }) => {
 	]
 
 	const tabsContents: TabsContents = {
-		signin: <SignIn history={history && history} />,
-		signup: <SignUp history={history && history} />,
+		signin: <SignIn history={history} />,
+		signup: <SignUp history={history} />,
 	}
 
 	return (

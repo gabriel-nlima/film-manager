@@ -1,31 +1,37 @@
 import React, { FC } from 'react'
 
 // antd components
-import Affix from 'antd/es/affix'
-import PageHeader from 'antd/es/page-header'
+import Row from 'antd/es/row'
+import Col from 'antd/es/col'
+import Typograph from 'antd/es/typography'
+import Divider from 'antd/es/divider'
 
 interface Props {
 	title?: React.ReactNode
-	extra?: React.ReactNode[] | React.ReactNode
+	extra?: React.ReactNode
 	subTitle?: string
-	onBack?: () => void
 }
+
+const { Title, Text } = Typograph
 
 const Header: FC<Props> = ({
 	title = 'Film Manager',
-	subTitle = 'bem vindo',
+	subTitle = 'Bem vindo',
 	extra,
-	onBack,
 }) => {
 	return (
-		<Affix offsetTop={10} style={{ marginBottom: 30 }}>
-			<PageHeader
-				title={title}
-				subTitle={subTitle}
-				extra={extra}
-				onBack={onBack}
-			/>
-		</Affix>
+		<Row style={{ marginBottom: 15 }}>
+			<Col xs={14}>
+				<Title level={4}>
+					{title}
+					<Divider type='vertical' orientation='center' />
+					<Text type='secondary'>{subTitle}</Text>
+				</Title>
+			</Col>
+			<Col xs={10} style={{ textAlign: 'right' }}>
+				{extra}
+			</Col>
+		</Row>
 	)
 }
 

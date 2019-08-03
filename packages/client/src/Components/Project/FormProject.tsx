@@ -2,6 +2,7 @@ import React from 'react'
 
 // interfaces
 import { Project, ProjectTypes, GenresTypes } from '../../Types'
+import { History } from 'history'
 
 // components
 
@@ -10,6 +11,7 @@ import Button from 'antd/es/button'
 import Form from 'antd/es/form'
 import Input from 'antd/es/input'
 import Select from 'antd/es/select'
+import Typograph from 'antd/es/typography'
 import Row from 'antd/es/row'
 import Col from 'antd/es/col'
 import Card from 'antd/es/card'
@@ -18,16 +20,45 @@ interface Props {
 	handleChange?: (value: string, input: string) => void
 	onSubmit?: () => void
 	project?: Project
+	history: History
 }
 
 const { Option } = Select
+const { Title, Text, Paragraph } = Typograph
 
-const FormProject: React.FC<Props> = ({ project, handleChange, onSubmit }) => {
+const FormProject: React.FC<Props> = ({
+	project,
+	handleChange,
+	onSubmit,
+	history,
+}) => {
+	const FormHeader = (
+		<Row>
+			<Col xs={18}>
+				<Title level={3}>
+					<Button
+						icon='left'
+						size='large'
+						className='backButton'
+						onClick={() => history.push('/projects')}
+					/>
+					{project && project._id ? 'Editar projeto' : 'Novo projeto'}
+				</Title>
+				<Paragraph ellipsis type='secondary'>
+					Projeto é uma produção audiovisual de qualquer tipo.
+				</Paragraph>
+				<Text type='secondary'>
+					Organize e gerencie sua produção e fases com o Film Manager
+				</Text>
+			</Col>
+		</Row>
+	)
+
 	return (
-		<Card>
+		<Card title={FormHeader}>
 			<Form layout='horizontal'>
 				<Row>
-					<Col xs={12}>
+					<Col xs={24} md={12}>
 						<Form.Item label='Título'>
 							<Input
 								onChange={(e) =>
@@ -76,7 +107,9 @@ const FormProject: React.FC<Props> = ({ project, handleChange, onSubmit }) => {
 					</Col>
 				</Row>
 				<Form.Item className='submit'>
-					<Button>Cancelar</Button>
+					<Button onClick={() => history.push('/projects')}>
+						Cancelar
+					</Button>
 					<Button
 						type='primary'
 						onClick={() => onSubmit && onSubmit()}

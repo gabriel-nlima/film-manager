@@ -1,32 +1,39 @@
 export enum ProjectTypes {
-	film = 'Filme',
-	shortFilm = 'Curta-metragem',
-	halfLengthFilm = 'Media-metragem',
-	featureFilm = 'Longa-metragem',
-	videoclip = 'Videoclip',
-	musical = 'Musical',
-	gameplay = 'Gameplay',
-	others = 'Outros',
+	Film = 'Filme',
+	ShortFilm = 'Curta-metragem',
+	HalfLengthFilm = 'Media-metragem',
+	FeatureFilm = 'Longa-metragem',
+	Videoclip = 'Videoclip',
+	Musical = 'Musical',
+	Gameplay = 'Gameplay',
+	Others = 'Outros',
 }
 
 export enum GenresTypes {
-	comedy = 'Comédia',
-	action = 'Ação',
-	adventure = 'Aventura',
-	romance = 'Romance',
-	terror = 'Terror',
-	suspense = 'Suspense',
-	musical = 'Musical',
-	drama = 'Drama',
+	Comedy = 'Comédia',
+	Action = 'Ação',
+	Adventure = 'Aventura',
+	Romance = 'Romance',
+	Terror = 'Terror',
+	Suspense = 'Suspense',
+	Musical = 'Musical',
+	Drama = 'Drama',
+}
+
+export enum ProjectPhases {
+	PreProduction = 'Pré Produção',
+	Production = 'Produção',
+	PosProduction = 'Pós Produção',
 }
 
 export interface Project {
-	[x: string]: string | GenresTypes | ProjectTypes | undefined
+	[x: string]: string | GenresTypes | ProjectTypes | ProjectPhases | undefined
 	title: string
 	type: ProjectTypes
 	desc?: string
 	genre?: GenresTypes
 	_id?: string
+	phase?: ProjectPhases
 }
 
 export interface Character {
