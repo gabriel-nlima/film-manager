@@ -4,8 +4,12 @@ import React, { FC, useState } from 'react'
 import { Project, ProjectPhases } from '../../Types'
 import { Location, History } from 'history'
 
+//components
+import PreProduction from './PreProduction'
+
 // antd components
 import Typograph from 'antd/es/typography'
+import Tabs from 'antd/es/tabs'
 import Col from 'antd/es/col'
 import Row from 'antd/es/row'
 import Button from 'antd/es/button'
@@ -19,6 +23,7 @@ interface Props {
 }
 
 const { Title, Text, Paragraph } = Typograph
+const { TabPane } = Tabs
 
 const ManageProject: FC<Props> = ({ location, history }) => {
 	const { project } = location.state
@@ -28,7 +33,7 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 		<Card
 			title={
 				<Row>
-					<Col xs={20}>
+					<Col xs={19}>
 						<Title level={3}>
 							<Button
 								icon='left'
@@ -41,7 +46,7 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 						<Paragraph type='secondary'>{project.type}</Paragraph>
 						<Text type='secondary'>{project.desc}</Text>
 					</Col>
-					<Col xs={4} style={{ textAlign: 'right' }}>
+					<Col xs={5} style={{ textAlign: 'right' }}>
 						<Button type='dashed' icon='edit'>
 							Editar
 						</Button>
@@ -89,12 +94,41 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 					/>
 				</Steps>
 			</Row>
-			<Row align='middle'>
-				<Col xs={10}>Conteudo de {ProjectPhases.PreProduction}</Col>
-				<Col xs={14} style={{ textAlign: 'right' }}>
-					<Button onClick={() => setStep(step + 1)}>Concluir</Button>
-				</Col>
-			</Row>
+			<Tabs activeKey={`${step}`} renderTabBar={() => <></>}>
+				<TabPane tab={ProjectPhases.PreProduction} key='0'>
+					<PreProduction onFinishPhase={() => setStep(step + 1)} />
+				</TabPane>
+				<TabPane tab={ProjectPhases.PreProduction} key='1'>
+					<Row align='middle'>
+						<Col xs={10}>
+							Conteudo de {ProjectPhases.Production} [TODO]
+						</Col>
+						<Col xs={14} style={{ textAlign: 'right' }}>
+							<Button
+								type='primary'
+								onClick={() => setStep(step + 1)}
+							>
+								Concluir
+							</Button>
+						</Col>
+					</Row>
+				</TabPane>
+				<TabPane tab={ProjectPhases.PreProduction} key='2'>
+					<Row align='middle'>
+						<Col xs={10}>
+							Conteudo de {ProjectPhases.PosProduction} [TODO]
+						</Col>
+						<Col xs={14} style={{ textAlign: 'right' }}>
+							<Button
+								type='primary'
+								onClick={() => setStep(step + 1)}
+							>
+								Concluir
+							</Button>
+						</Col>
+					</Row>
+				</TabPane>
+			</Tabs>
 		</Card>
 	)
 }

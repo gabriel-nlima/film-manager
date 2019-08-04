@@ -33,7 +33,7 @@ export interface Project {
 	desc?: string
 	genre?: GenresTypes
 	_id?: string
-	phase?: ProjectPhases
+	currentPhase?: ProjectPhases
 }
 
 export interface Character {
