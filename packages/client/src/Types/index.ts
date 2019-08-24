@@ -20,10 +20,16 @@ export enum GenresTypes {
 	Drama = 'Drama',
 }
 
-export enum ProjectPhases {
+export enum Phases {
 	PreProduction = 'Pré Produção',
 	Production = 'Produção',
 	PosProduction = 'Pós Produção',
+}
+
+export interface ProjectPhases {
+	name: Phases
+	finished: boolean
+	last: Phases
 }
 
 export interface Project {

@@ -91,7 +91,6 @@ const Projects: FC<Props> = ({ history }) => {
 							style={{ marginBottom: 5 }}
 							hoverable
 							onClick={() =>
-								history &&
 								history.push({
 									pathname: '/manageProject',
 									state: { project },

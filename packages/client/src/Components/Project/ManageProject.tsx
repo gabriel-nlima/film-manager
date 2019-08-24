@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 
 //interfaces
-import { Project, ProjectPhases } from '../../Types'
+import { Project, Phases } from '../../Types'
 import { Location, History } from 'history'
 
 //components
@@ -62,7 +62,7 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 								onClick={() => setStep(0)}
 								style={{ cursor: 'pointer' }}
 							>
-								{ProjectPhases.PreProduction}
+								{Phases.PreProduction}
 							</span>
 						}
 						icon={<Icon type={'coffee'} />}
@@ -74,7 +74,7 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 								onClick={() => setStep(1)}
 								style={{ cursor: 'pointer' }}
 							>
-								{ProjectPhases.Production}
+								{Phases.Production}
 							</span>
 						}
 						icon={<Icon type={'video-camera'} />}
@@ -86,7 +86,7 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 								onClick={() => setStep(2)}
 								style={{ cursor: 'pointer' }}
 							>
-								{ProjectPhases.PosProduction}
+								{Phases.PosProduction}
 							</span>
 						}
 						icon={<Icon type={'check'} />}
@@ -95,13 +95,13 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 				</Steps>
 			</Row>
 			<Tabs activeKey={`${step}`} renderTabBar={() => <></>}>
-				<TabPane tab={ProjectPhases.PreProduction} key='0'>
+				<TabPane tab={Phases.PreProduction} key='0'>
 					<PreProduction onFinishPhase={() => setStep(step + 1)} />
 				</TabPane>
-				<TabPane tab={ProjectPhases.PreProduction} key='1'>
+				<TabPane tab={Phases.PreProduction} key='1'>
 					<Row align='middle'>
 						<Col xs={10}>
-							Conteudo de {ProjectPhases.Production} [TODO]
+							Conteudo de {Phases.Production} [TODO]
 						</Col>
 						<Col xs={14} style={{ textAlign: 'right' }}>
 							<Button
@@ -113,10 +113,10 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 						</Col>
 					</Row>
 				</TabPane>
-				<TabPane tab={ProjectPhases.PreProduction} key='2'>
+				<TabPane tab={Phases.PreProduction} key='2'>
 					<Row align='middle'>
 						<Col xs={10}>
-							Conteudo de {ProjectPhases.PosProduction} [TODO]
+							Conteudo de {Phases.PosProduction} [TODO]
 						</Col>
 						<Col xs={14} style={{ textAlign: 'right' }}>
 							<Button
