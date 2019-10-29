@@ -26,7 +26,7 @@ interface Props {
 const { Option } = Select
 const { Title, Text, Paragraph } = Typograph
 
-const FormProject: React.FC<Props> = ({
+const ScriptProject: React.FC<Props> = ({
 	project,
 	handleChange,
 	onSubmit,
@@ -112,7 +112,7 @@ const FormProject: React.FC<Props> = ({
 					</Button>
 					<Button
 						type='primary'
-						onClick={() => history.push('/scriptProject')}
+						onClick={() => onSubmit && onSubmit()}
 						className='submitBtn'
 					>
 						Salvar
@@ -123,4 +123,4 @@ const FormProject: React.FC<Props> = ({
 	)
 }
 
-export default FormProject
+export default ScriptProject

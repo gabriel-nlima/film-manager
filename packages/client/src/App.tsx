@@ -10,6 +10,8 @@ import Layout from './Components/Layout'
 import Projects from './Components/Project/Projects'
 import ManageProject from './Components/Project/ManageProject'
 import FormProject from './Components/Project/FormProject'
+import ScriptProject from './Components/Project/ScriptProject'
+
 
 // containers
 
@@ -29,11 +31,8 @@ const App: React.FC = () => {
 				<Layout>
 					<Route path='/projects' exact component={Projects} />
 					<Route path='/newProject' exact component={FormProject} />
-					<Route
-						path='/manageProject'
-						exact
-						component={ManageProject}
-					/>
+					<Route path='/manageProject' exact component={ManageProject}/>
+					<Route path='/scriptProject' exact component={ScriptProject}/>
 					<Route path='/manageUsers' exact component={users} />
 				</Layout>
 			</Switch>
