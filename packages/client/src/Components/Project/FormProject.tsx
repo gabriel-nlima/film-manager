@@ -112,7 +112,7 @@ const FormProject: React.FC<Props> = ({
 					</Button>
 					<Button
 						type='primary'
-						onClick={() => history.push('/scriptProject')}
+						onClick={() => history.push('/scriptManage')}
 						className='submitBtn'
 					>
 						Salvar
