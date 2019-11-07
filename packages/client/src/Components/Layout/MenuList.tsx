@@ -30,6 +30,12 @@ const MenuList: FC<Props> = ({ onSelectMenu, selectedKeys }) => {
 					<Icon type='plus' />
 					<span>Novo projeto</span>
 				</Menu.Item>
+
+				<Menu.Item key={'/characters'}>
+					<Icon type='plus' />
+					<span>Personagens</span>
+				</Menu.Item>
+				
 			</Menu.SubMenu>
 			<Menu.Item key={'/manageUsers'}>
 				<Icon type='team' />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from "react";
 
 // interfaces
 import { Project, ProjectTypes, GenresTypes } from '../../Types'
@@ -15,6 +15,14 @@ import Typograph from 'antd/es/typography'
 import Row from 'antd/es/row'
 import Col from 'antd/es/col'
 import Card from 'antd/es/card'
+import Modal from 'antd/es/modal'
+import TextArea from 'antd/es/input/TextArea'
+import DatePicker from 'antd/es/date-picker'
+import TimePicker from 'antd/es/time-picker'
+import List from 'antd/es/list'
+import Avatar from 'antd/es/avatar'
+
+
 
 interface Props {
 	handleChange?: (value: string, input: string) => void
@@ -31,7 +39,33 @@ const FormScene: React.FC<Props> = ({
 	handleChange,
 	onSubmit,
 	history,
+	
 }) => {
+
+/* Funções da Modal de criar falas*/
+
+const [visible, setVisible] = useState (false);
+
+const showModal = (event: React.FormEvent<HTMLElement>) => {
+ 	setVisible (true);
+}
+
+const handleOk = (event: React.FormEvent<HTMLElement>) => {
+	setVisible(false);
+}
+
+const handleCancel = (event: React.FormEvent<HTMLElement>) => {
+	setVisible (false);
+}
+
+
+const data = [
+  {
+    title: 'Gloria Swanson',
+  }
+
+];
+
 	const FormHeader = (
 		<Row>
 			<Col xs={18}>
@@ -42,14 +76,9 @@ const FormScene: React.FC<Props> = ({
 						className='backButton'
 						onClick={() => history.push('/projects')}
 					/>
-					{project && project._id ? 'Editar projeto' : 'Novo projeto'}
+					{project && project._id ? 'Editar Cena' : 'Nova Cena'}
 				</Title>
-				<Paragraph ellipsis type='secondary'>
-					Projeto é uma produção audiovisual de qualquer tipo.
-				</Paragraph>
-				<Text type='secondary'>
-					Organize e gerencie sua produção e fases com o Film Manager
-				</Text>
+				
 			</Col>
 		</Row>
 	)
@@ -57,28 +86,14 @@ const FormScene: React.FC<Props> = ({
 	return (
 		<Card title={FormHeader}>
 			<Form layout='horizontal'>
-				<Row>
-					<Col xs={24} md={12}>
-						<Form.Item label='Título'>
-							<Input
-								onChange={(e) =>
-									handleChange &&
-									handleChange(e.target.value, 'title')
-								}
-							/>
-						</Form.Item>
-					</Col>
-				</Row>
-				<Row gutter={16}>
+			<Row gutter={16}>
 					<Col xs={12}>
-						<Form.Item label='Tipo'>
-							<Select>
-								{Object.values(ProjectTypes).map((type) => (
-									<Option key={type} value={type}>
-										{type}
-									</Option>
-								))}
-							</Select>
+						<Form.Item 
+						label='Título'>
+							<Input>
+							
+							</Input>
+		
 						</Form.Item>
 					</Col>
 					<Col xs={12}>
@@ -93,9 +108,85 @@ const FormScene: React.FC<Props> = ({
 						</Form.Item>
 					</Col>
 				</Row>
+
+				<Col xs={7}>
+						<Form.Item>
+								<DatePicker
+									name = 'Data'
+									placeholder = 'Data'
+								>
+									
+								</DatePicker>
+						</Form.Item>
+				</Col>
+
+				<Row gutter={2}>
+
+					<Col>
+						<Form.Item>
+								<TimePicker
+									placeholder = 'Hora'
+								>
+									
+								</TimePicker>
+						</Form.Item>
+					</Col>
+				</Row>
+
+  
+				<Row>
+					<Button
+						type='primary'
+						className='submitBtn'
+						onClick={showModal}
+			
+					>
+						Adicionar Dialogo
+					</Button>
+
+					<Form.Item>
+
+						<Modal
+							title="Basic Modal"
+							visible={visible}
+							onOk={handleOk}
+							onCancel={handleCancel}
+						>
+							<Form.Item 
+								label='Personagem'
+							>
+
+							</Form.Item>		
+
+							<Form.Item label='Fala'>
+								<TextArea
+								
+								/>
+							</Form.Item>
+
+						</Modal>
+					</Form.Item>
+				</Row>
+				
+				<Row>
+				<List
+					itemLayout="horizontal"
+					dataSource={data}
+					renderItem={item => (
+					<List.Item>
+						<List.Item.Meta
+						avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+						title={<a href="https://ant.design">{item.title}</a>}
+						description="Eu sou grande. Os filmes é que ficaram pequenos."
+						/>
+					</List.Item>
+					)}
+				/>,
+				</Row>
+
 				<Row>
 					<Col xs={24}>
-						<Form.Item label='Descrição'>
+						<Form.Item label='Observações da edição'>
 							<Input.TextArea
 								rows={3}
 								onChange={(e) =>

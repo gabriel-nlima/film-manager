@@ -47,7 +47,10 @@ const ManageProject: FC<Props> = ({ location, history }) => {
 						<Text type='secondary'>{project.desc}</Text>
 					</Col>
 					<Col xs={5} style={{ textAlign: 'right' }}>
-						<Button type='dashed' icon='edit'>
+						<Button 
+							type='dashed' 
+							icon='edit' 
+							onClick={() => history.push('/editProject')}>
 							Editar
 						</Button>
 					</Col>

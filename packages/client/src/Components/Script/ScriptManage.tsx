@@ -36,10 +36,7 @@ const scriptManage: FC<Props> = ({ history }) => {
 					<Row>
 						<Col xs={14}>
 							<Title level={3}>Cenas</Title>
-							<Paragraph type='secondary'>
-								Gerencie suas produções audivisuais.
-							</Paragraph>
-							<div></div>
+				
 							<Button
 								type='primary'
 								onClick={() => history.push('/scriptManage')}
@@ -47,10 +44,16 @@ const scriptManage: FC<Props> = ({ history }) => {
 								>
 								Novo
 							</Button>
-						</Col>
-						<Col xs={10} />
+						
+							<Paragraph type='secondary'>
+								
+							</Paragraph>
+							
+					</Col>
+					<Col xs={10} />
 					</Row>
 					<Row>
+						
 						<Col xs={14} sm={16} md={18} lg={20}>
 							<Search placeholder='procurar cena' />
 						</Col>
