@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from 'react'
 
 // interfaces
-import { Project, ProjectTypes, GenresTypes } from '../../Types'
+import { Project, GenresTypes } from '../../Types'
 import { History } from 'history'
 
 // components
@@ -22,8 +22,6 @@ import TimePicker from 'antd/es/time-picker'
 import List from 'antd/es/list'
 import Avatar from 'antd/es/avatar'
 
-
-
 interface Props {
 	handleChange?: (value: string, input: string) => void
 	onSubmit?: () => void
@@ -32,39 +30,35 @@ interface Props {
 }
 
 const { Option } = Select
-const { Title, Text, Paragraph } = Typograph
+const { Title } = Typograph
 
 const FormScene: React.FC<Props> = ({
 	project,
 	handleChange,
 	onSubmit,
 	history,
-	
 }) => {
+	/* Funções da Modal de criar falas*/
 
-/* Funções da Modal de criar falas*/
+	const [visible, setVisible] = useState(false)
 
-const [visible, setVisible] = useState (false);
+	const showModal = (event: React.FormEvent<HTMLElement>) => {
+		setVisible(true)
+	}
 
-const showModal = (event: React.FormEvent<HTMLElement>) => {
- 	setVisible (true);
-}
+	const handleOk = (event: React.FormEvent<HTMLElement>) => {
+		setVisible(false)
+	}
 
-const handleOk = (event: React.FormEvent<HTMLElement>) => {
-	setVisible(false);
-}
+	const handleCancel = (event: React.FormEvent<HTMLElement>) => {
+		setVisible(false)
+	}
 
-const handleCancel = (event: React.FormEvent<HTMLElement>) => {
-	setVisible (false);
-}
-
-
-const data = [
-  {
-    title: 'Gloria Swanson',
-  }
-
-];
+	const data = [
+		{
+			title: 'Gloria Swanson',
+		},
+	]
 
 	const FormHeader = (
 		<Row>
@@ -78,7 +72,6 @@ const data = [
 					/>
 					{project && project._id ? 'Editar Cena' : 'Nova Cena'}
 				</Title>
-				
 			</Col>
 		</Row>
 	)
@@ -86,14 +79,10 @@ const data = [
 	return (
 		<Card title={FormHeader}>
 			<Form layout='horizontal'>
-			<Row gutter={16}>
+				<Row gutter={16}>
 					<Col xs={12}>
-						<Form.Item 
-						label='Título'>
-							<Input>
-							
-							</Input>
-		
+						<Form.Item label='Título'>
+							<Input></Input>
 						</Form.Item>
 					</Col>
 					<Col xs={12}>
@@ -110,78 +99,65 @@ const data = [
 				</Row>
 
 				<Col xs={7}>
-						<Form.Item>
-								<DatePicker
-									name = 'Data'
-									placeholder = 'Data'
-								>
-									
-								</DatePicker>
-						</Form.Item>
+					<Form.Item>
+						<DatePicker name='Data' placeholder='Data'></DatePicker>
+					</Form.Item>
 				</Col>
 
 				<Row gutter={2}>
-
 					<Col>
 						<Form.Item>
-								<TimePicker
-									placeholder = 'Hora'
-								>
-									
-								</TimePicker>
+							<TimePicker placeholder='Hora'></TimePicker>
 						</Form.Item>
 					</Col>
 				</Row>
 
-  
 				<Row>
 					<Button
 						type='primary'
 						className='submitBtn'
 						onClick={showModal}
-			
 					>
 						Adicionar Dialogo
 					</Button>
 
 					<Form.Item>
-
 						<Modal
-							title="Basic Modal"
+							title='Basic Modal'
 							visible={visible}
 							onOk={handleOk}
 							onCancel={handleCancel}
 						>
-							<Form.Item 
-								label='Personagem'
-							>
-
-							</Form.Item>		
+							<Form.Item label='Personagem'></Form.Item>
 
 							<Form.Item label='Fala'>
-								<TextArea
-								
-								/>
+								<TextArea />
 							</Form.Item>
-
 						</Modal>
 					</Form.Item>
 				</Row>
-				
+
 				<Row>
-				<List
-					itemLayout="horizontal"
-					dataSource={data}
-					renderItem={item => (
-					<List.Item>
-						<List.Item.Meta
-						avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-						title={<a href="https://ant.design">{item.title}</a>}
-						description="Eu sou grande. Os filmes é que ficaram pequenos."
-						/>
-					</List.Item>
-					)}
-				/>,
+					<List
+						itemLayout='horizontal'
+						dataSource={data}
+						renderItem={(item) => (
+							<List.Item>
+								<List.Item.Meta
+									avatar={
+										<Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
+									}
+									title={
+										<a href='https://ant.design'>
+											{item.title}
+										</a>
+									}
+									description='Eu sou grande. Os filmes é que ficaram pequenos.'
+								/>
+							</List.Item>
+						)}
+					/>
+					,
 				</Row>
 
 				<Row>
