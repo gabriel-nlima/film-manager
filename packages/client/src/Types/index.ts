@@ -26,6 +26,24 @@ export enum Phases {
 	PosProduction = 'Pós Produção',
 }
 
+export enum ReqStatus {
+	START = 'START',
+	SUCCESS = 'SUCCESS',
+	FAILURE = 'FAILURE',
+}
+
+export interface Status {
+	isLoading: boolean
+	isError: boolean
+	errMsg: string
+	data: any
+}
+
+export type StatusAction =
+	| { type: ReqStatus.START }
+	| { type: ReqStatus.SUCCESS; payload: any }
+	| { type: ReqStatus.FAILURE; errMsg: string }
+
 export interface ProjectPhases {
 	name: Phases
 	finished: boolean

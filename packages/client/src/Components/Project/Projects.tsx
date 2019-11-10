@@ -5,16 +5,11 @@ import { Project, ProjectTypes } from '../../Types'
 import { History } from 'history'
 
 // antd components
-import Card from 'antd/es/card'
-import Divider from 'antd/es/divider'
-import Typograph from 'antd/es/typography'
-import Tag from 'antd/es/tag'
-import Col from 'antd/es/col'
-import Row from 'antd/es/row'
-import Button from 'antd/es/button'
-import Search from 'antd/es/input/Search'
+import { Typography, Card, Row, Col, Button, Divider, Tag, Input } from 'antd'
+import { useAxios } from '../../hooks'
 
-const { Title, Paragraph, Text } = Typograph
+const { Title, Paragraph, Text } = Typography
+const { Search } = Input
 
 interface Props {
 	history: History
@@ -35,6 +30,15 @@ const projects: Project[] = [
 ]
 
 const Projects: FC<Props> = ({ history }) => {
+	const { isError, isLoading } = useAxios('GET', '/api/users')
+
+	console.log(isLoading, isError)
+	// const sendData = async () => {
+	// 	const [data, error] = await send('GET', '/api/users');
+	// 	console.log(data, error);
+	// };
+	// sendData();
+
 	return (
 		<Card
 			title={

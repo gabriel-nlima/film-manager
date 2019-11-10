@@ -14,14 +14,9 @@ import ScriptProject from './Components/Script/ScriptManage'
 import ScriptManage from './Components/Script/ScriptManage'
 import formScene from './Components/Scene/FormScene'
 
-
-
-
 // containers
 
 // antd components
-
-// redux
 
 const users = () => {
 	return <h3>TODO</h3>
@@ -35,10 +30,22 @@ const App: React.FC = () => {
 				<Layout>
 					<Route path='/projects' exact component={Projects} />
 					<Route path='/newProject' exact component={FormProject} />
-					<Route path='/manageProject' exact component={ManageProject}/>
-					<Route path='/scriptProject' exact component={ScriptProject}/>
-					<Route path='/scriptManage' exact component={ScriptManage}/>
-					<Route path='/formScene' exact component={formScene}/>
+					<Route
+						path='/manageProject'
+						exact
+						component={ManageProject}
+					/>
+					<Route
+						path='/scriptProject'
+						exact
+						component={ScriptProject}
+					/>
+					<Route
+						path='/scriptManage'
+						exact
+						component={ScriptManage}
+					/>
+					<Route path='/formScene' exact component={formScene} />
 
 					<Route path='/manageUsers' exact component={users} />
 				</Layout>
